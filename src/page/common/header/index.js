@@ -1,36 +1,45 @@
+/*
+* @Author: Rosen
+* @Date:   2017-05-18 19:30:12
+* @Last Modified by:   Rosen
+* @Last Modified time: 2017-05-27 19:46:42
+*/
 
-
+'use strict';
 require('./index.css');
-var _mm = require('util/mm.js');
+var _mm     = require('util/mm.js');
 // 通用页面头部
 var header = {
-    init: function () {
+    init : function(){
+        this.onLoad();
         this.bindEvent();
     },
-    onLoad: function () {
+    onLoad : function(){
         var keyword = _mm.getUrlParam('keyword');
-        // keyword 存在，则回填输入框；
-        if (keyword) {
+        // keyword存在，则回填输入框
+        if(keyword){
             $('#search-input').val(keyword);
-        }   
+        };
     },
-    bindEvent: function () {
+    bindEvent : function(){
         var _this = this;
-        // 点击搜索按钮后，做搜索提交
-        $('#search-btn').click(function () {
+        // 点击搜索按钮以后，做搜索提交
+        $('#search-btn').click(function(){
             _this.searchSubmit();
         });
-        // 输入回车后，做搜索提交
-        $('#search-input').keyup(function (e) {
-            // 13是回车键的keycode
-            if (e.keyCode === 13) {
+        // 输入会车后，做搜索提交
+        $('#search-input').keyup(function(e){
+            // 13是回车键的keyCode
+            if(e.keyCode === 13){
                 _this.searchSubmit();
-            }  
+            }
         });
     },
-    searchSubmit: function () {
+    // 搜索的提交
+    searchSubmit : function(){
         var keyword = $.trim($('#search-input').val());
-        if (keyword) {
+        // 如果提交的时候有keyword,正常跳转到list页
+        if(keyword){
             window.location.href = './list.html?keyword=' + keyword;
         }
         // 如果keyword为空，直接返回首页

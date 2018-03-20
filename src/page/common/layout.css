@@ -1,4 +1,9 @@
-
+/*
+* @Author: Rosen
+* @Date:   2017-05-16 18:03:01
+* @Last Modified by:   Rosen
+* @Last Modified time: 2017-05-23 21:50:48
+*/
 /* css reset */
 *{
     margin: 0;
@@ -6,7 +11,7 @@
 }
 body{
     background: #f6f6f6;
-    font: 12px/1.5 tohoma,arial,Microsoft YaHei,sans-serif;
+    font: 12px/1.5 tahoma, arial, Microsoft YaHei, sans-serif;
 }
 li{
     list-style: none;
@@ -29,6 +34,25 @@ input[type='checkbox']{
     position: relative;
     overflow: hidden;
 }
+
+/* panel */
+.panel{
+    padding: 10px;
+    margin-bottom: 10px;
+    background: #fff;
+}
+.panel .panel-title{
+    padding: 10px;
+    font-size: 14px;
+    color: #666;
+    font-weight: bold;
+    border-bottom: 1px solid #eee;
+}
+.panel .panel-body{
+    padding: 10px;
+    overflow: hidden;
+}
+
 /* 全局通用样式 */
 /* 隐藏类 */
 .hide{
@@ -59,7 +83,7 @@ input[type='checkbox']{
     font-size: 17px;
     font-weight: bold;
     color: #fff;
-    outline: #fff;
+    outline: none;
     cursor: pointer;
     text-decoration: none;
 }
@@ -77,6 +101,6 @@ input[type='checkbox']{
     height: 65px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    opacity: .6;
     background: url(../../image/icon/loading.gif) no-repeat;
+    opacity: .6;
 }

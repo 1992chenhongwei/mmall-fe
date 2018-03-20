@@ -5,6 +5,6 @@
 {{^isActive}}
 <li class="nav-item">
 {{/isActive}}
-    <a href="{{href}}" class="link">{{desc}}</a>
+    <a class="link" href="{{href}}">{{desc}}</a>
 </li>
-{{/navList}}
+{{/navList}} 
