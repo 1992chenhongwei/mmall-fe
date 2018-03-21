@@ -1,7 +1,7 @@
 /*
-* @Author: Rosen
+* @Author: ChenHongwei
 * @Date:   2017-05-08 15:19:12
-* @Last Modified by:   Rosen
+* @Last Modified by:   ChenHongwei
 * @Last Modified time: 2017-05-26 19:36:18
 */
 
@@ -19,9 +19,9 @@ $(function() {
     var bannerHtml  = _mm.renderHtml(templateBanner);
     $('.banner-con').html(bannerHtml);
     // 初始化banner
-    var $slider     = $('.banner').unslider({
-        dots: true
-    });
+    // var $slider     = $('.banner').unslider({
+    //     dots: true
+    // });
     // 前一张和后一张操作的事件绑定
     $('.banner-con .banner-arrow').click(function(){
         var forward = $(this).hasClass('prev') ? 'prev' : 'next';
