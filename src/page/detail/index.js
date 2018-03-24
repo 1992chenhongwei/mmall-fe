@@ -79,6 +79,7 @@ var page = {
             $pageWrap.html('<p class="err-tip">此商品太淘气，找不到了</p>');
         })
     },
+    // 数据匹配
     filter:function (data) {
         data.subImages = data.subImages.split(',');
     }
