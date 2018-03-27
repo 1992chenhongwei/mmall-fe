@@ -14,7 +14,7 @@
                     <span>全选</span>
                 </label>
             </th>
-            <th class="cart-cell cell-img"></th>
+            <th class="cart-cell cell-img">&nbsp;</th>
             <th class="cart-cell cell-info">商品信息</th>
             <th class="cart-cell cell-price">单价</th>
             <th class="cart-cell cell-count">数量</th>
