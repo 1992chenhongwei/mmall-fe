@@ -102,7 +102,7 @@ var addressModal = {
         receiverInfo.receiverProvince = this.$modalWrap.find('#receiver-province').val();
         receiverInfo.receiverCity = this.$modalWrap.find('#receiver-city').val();
         receiverInfo.receiverAddress = $.trim(this.$modalWrap.find('#receiver-address').val());
-        receiverInfo.receiverPhone = $.trim(this.$modalWrap.find('#receiver-phone').val());
+        receiverInfo.receiverMobile = $.trim(this.$modalWrap.find('#receiver-phone').val());
         receiverInfo.receiverZip = $.trim(this.$modalWrap.find('#receiver-zip').val());
         
         if (this.option.isUpdate) {
@@ -121,7 +121,7 @@ var addressModal = {
         else if (!receiverInfo.receiverAddress) {
             result.errMsg = '请输入收件人详细地址';
         } 
-        else if (!receiverInfo.receiverPhone) {
+        else if (!receiverInfo.receiverMobile) {
             result.errMsg = '请输入收件人手机号';
         }
         // 所有验证均通过

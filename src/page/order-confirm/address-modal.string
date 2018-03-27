@@ -38,7 +38,7 @@
                 <div class="form-line">
                     <label for="receiver-phone" class="label"><span class="required">*</span>收件人手机：</label>
                     <input type="text" class="form-item" id="receiver-phone" 
-                    placeholder="请输入11位手机号" value="{{data.receiverPhone}}"/>
+                    placeholder="请输入11位手机号" value="{{data.receiverMobile}}"/>
                 </div>
                 <div class="form-line">
                     <label for="receiver-zip" class="label">邮政编码：</label>
