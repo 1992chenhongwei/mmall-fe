@@ -10,12 +10,13 @@ console.log(WEBPACK_ENV);
 //获取html-webpack-plugin参数的方法
 var getHtmlConfig = function (name,title) {
     return {
-        template: './src/view/'+name+'.html',
-        filename: 'view/'+name+'.html',
-        title: title,
-        inject: true,
-        hash: true,
-        chunks: ['common', name]
+        template    : './src/view/'+name+'.html',
+        filename    : 'view/'+name+'.html',
+        favicon     : './favicon.ico',
+        title       : title,
+        inject      : true,
+        hash        : true,
+        chunks      : ['common', name]
     }
 };
 //webpack config
@@ -36,12 +37,13 @@ var config = {
         'user-center'           : ['./src/page/user-center/index.js'],
         'user-center-update'    : ['./src/page/user-center-update/index.js'],
         'user-pass-update'      : ['./src/page/user-pass-update/index.js'],
-        'result'                : ['./src/page/result/index.js']
+        'result'                : ['./src/page/result/index.js'],
+        'about'                 : ['./src/page/about/index.js']
     },
     output: {
-        path: './dist',
-        publicPath: '/dist',
-        filename: 'js/[name].js'
+        path        : __dirname+ '/dist/',
+        publicPath  : 'dev' === WEBPACK_ENV ? '/dist/' : '//s.happymmall.com/mmall-fe/dist/',
+        filename    : 'js/[name].js'
     },
     externals:{
         'jquery': "window.jQuery"
@@ -49,8 +51,15 @@ var config = {
     module: {
         loaders: [
             { test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader') },
-            { test: /\.string$/, loader: 'html-loader'},
-            { test: /\.(gif|png|jpg|woff|svg|eot|ttf)\??.*$/, loader: 'url-loader?limit=100&name=/resource/[name].[ext]' }
+            { 
+                test    : /\.string$/, 
+                loader  : 'html-loader',
+                query   : {
+                    minimize                : true,
+                    removeAttributeQuotes   :false
+                }
+            },
+            { test: /\.(gif|png|jpg|woff|svg|eot|ttf)\??.*$/, loader: 'url-loader?limit=100&name=resource/[name].[ext]' }
         ]
     },
     resolve:{
@@ -85,7 +94,8 @@ var config = {
         new HtmlWebpackPlugin(getHtmlConfig('user-center-update','修改个人信息')),
         new HtmlWebpackPlugin(getHtmlConfig('user-pass-update','修改密码')),
         new HtmlWebpackPlugin(getHtmlConfig('user-register','用户注册')),
-        new HtmlWebpackPlugin(getHtmlConfig('result','操作结果'))
+        new HtmlWebpackPlugin(getHtmlConfig('result','操作结果')),
+        new HtmlWebpackPlugin(getHtmlConfig('about','关于mmall'))
     ],
 };
 if ('dev' === WEBPACK_ENV) {
